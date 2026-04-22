@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --primary: 327 100% 51%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 65%;
+    --border: 327 50% 20%;
+    --ring: 327 100% 51%;
+    --card: 240 10% 5%;
+    --card-foreground: 0 0% 98%;
+    --radius: 1rem;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --primary: 327 100% 51%;
+    --primary-foreground: 0 0% 100%;
+    --border: 327 50% 20%;
+    --ring: 327 100% 51%;
+    --card: 240 10% 5%;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#0F0F13] text-foreground min-h-screen selection:bg-pink-500/30;
+    background-image: radial-gradient(circle at 50% -20%, #301020 0%, #0F0F13 70%);
+  }
+}
+@layer components {
+  .glass-panel {
+    @apply backdrop-blur-xl bg-black/40 border border-pink-500/20 shadow-[0_0_20px_rgba(255,20,147,0.15)];
+  }
+  .neon-text {
+    text-shadow: 0 0 10px rgba(255, 20, 147, 0.8), 0 0 20px rgba(255, 20, 147, 0.4);
+  }
+  .neon-border {
+    @apply border-pink-500/50 shadow-[0_0_15px_rgba(255,20,147,0.3)];
+  }
+  .elegant-header {
+    font-family: 'Playfair Display', serif;
+    @apply tracking-widest uppercase;
+  }
+}
